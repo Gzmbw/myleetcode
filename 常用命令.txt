@@ -1,0 +1,19 @@
+注："//"这个符号只是起到注释，不包含在命令中，如果包含会指明。
+1.解压文件：tar -xzvf 文件  如：tar -xzvf linux-x64.tar.gz 
+2.移动文件：sudo mv -i wechat/ /opt/   意思是把wechat文件移动到opt目录下面
+3.建立文件：touch 文件名
+4.删除文件：rm 文件名(不过注意文件路径)；比如rm *.txt//意思是把后缀名为.txt的所有文件都删除
+5.创建目录：mkdir 文件名
+6.vim:命令模式(按esc进入)：dd(删除一整行)；set nu(设置行号)；sp 文件名(把一个分成两个)；在正常模式按：行数 dd(就是把这些行剪贴)，在按p就贴上；wqa(保存全部)；gcc -c max.c -o max.o(把max.c翻译成机器码)
+7.gcc hello.c -o hello.out && ./hello.out(一起执行)
+8.cd .. (可以返回上一层文件夹)
+9.git clone 文件/git add ./git commit -m "你的提交备注"/git push
+如果是第一次推送：git push origin master
+10.输出流重定项 >>和 > ;>>不会覆盖以前的内容，>会覆盖以前的内容；例如./a.out >> a.txt ;  ls /etc > etc.txt；就是把执行的文件结果导入到另一个文件里。
+10.1输入流重定项 << 和 < ;例如你把输入的数据放在了一个input.txt 文件中，执行./a.out < input.txt >> output.txt //就是输入了input.txt里面的数据，输出结果放在了output.txt文件里面了。
+10.2输出错误流：fprintf(stderr,"j!=0");return 1; 然后 ./a.out 1>output.txt 2>err.txt < input.txt //注意1是指输出到正确流，2是指输出到错误流。
+11.管道 ./input.out < input.txt | ./avg.out //其中input.out 和 avg.out都是单独功能的程序，然后通过管道把它们结合起来。
+12.gdb调试: gcc -g main.c -o main.out//现在的main.out就可以进行调试，以下是调试步骤：
+gdb ./main.out-->l//是列出文件内容-->\n//整个源代码显示出来-->start//开始--->p a//表示打印变量a的值---->n//只是下一步，如果按s就可以进入到调用函数---->bt//查看函数堆栈(切换栈，按f 1就是回到函数1)
+13.sudo apt-get remove --auto-remove stardict
+
